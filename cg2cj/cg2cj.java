@@ -41,7 +41,7 @@ public class cg2cj {
 		final SimpleDateFormat df = new SimpleDateFormat("[HH:mm:ss] "); 
 		
 		Path ifile = Paths.get("/Users/hugo/temp/datacj/LOD3_Building_v200.gml");
-		Path ofile = Paths.get("/Users/hugo/temp/datacj/output/LOD3_Building_v200.json");
+		Path ofile = Paths.get("/Users/hugo/temp/datacj/json/LOD3_Building_v200.json");
 		
 		System.out.println(df.format(new Date()) + "setting up citygml4j context and CityGML builder");
 		CityGMLContext ctx = CityGMLContext.getInstance();
