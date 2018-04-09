@@ -40,8 +40,8 @@ public class cg2cj {
 	public static void main(String[] args) throws Exception {
 		final SimpleDateFormat df = new SimpleDateFormat("[HH:mm:ss] "); 
 		
-		Path ifile = Paths.get("/Users/hugo/temp/datacj/LOD3_Building_v200.gml");
-		Path ofile = Paths.get("/Users/hugo/temp/datacj/json/LOD3_Building_v200.json");
+		Path ifile = Paths.get("/Users/hugo/Dropbox/data/cityjson/claus/Railway/v0.6/railway_cityjson_0.6/LoD3_railway.gml");
+		Path ofile = Paths.get("/Users/hugo/temp/tests/yo.json");
 		
 		System.out.println(df.format(new Date()) + "setting up citygml4j context and CityGML builder");
 		CityGMLContext ctx = CityGMLContext.getInstance();
@@ -49,6 +49,7 @@ public class cg2cj {
 		
 		// reading CityGML dataset
 		System.out.println(df.format(new Date()) + "reading file into main memory");
+		System.out.println(df.format(new Date()) + ifile);
 		CityGMLInputFactory in = builder.createCityGMLInputFactory();
 		CityGMLReader reader = in.createCityGMLReader(new File(ifile.toString()));
 		
@@ -84,8 +85,10 @@ public class cg2cj {
 		writer.write(cityModel);
 		writer.close();
 		
-		System.out.println(df.format(new Date()) + "CityJSON file  written");
+		System.out.println(df.format(new Date()) + "CityJSON file written: " + ofile);
 		System.out.println(df.format(new Date()) + "application successfully finished");
+
+
 	}
 
 }
